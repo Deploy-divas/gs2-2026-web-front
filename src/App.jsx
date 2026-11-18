@@ -1,10 +1,26 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
+
 
 const App = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      
-    </div>
+    <BrowserRouter>
+        
+      <Routes>
+
+        <Route path="/" element={<Index />} />
+        {/* <Route path="/login" element={<Login />} />
+
+        <Route element={<RotaPrivada />}>
+            <Route path="/camera" element={<Camera />} />
+            <Route path="/texto-reconhecido"element={<TextoReconhecido />} />
+            <Route path="/resumo-gerado" element={<ResumoGerado />} />
+            <Route path="/resumos" element={<Resumos />} />
+        </Route> */}
+    
+      </Routes>
+
+    </BrowserRouter>
   )
 }
 
