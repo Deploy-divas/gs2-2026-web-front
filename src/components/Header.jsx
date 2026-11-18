@@ -3,14 +3,17 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu as IconeMenu, X } from 'lucide-react'
 
+import logo from '../assets/audi-logo.svg'
+
 const links = [
   { nome: 'Problema', id: '#problema' },
   { nome: 'Como funciona', id: '#como-funciona' },
   { nome: 'Equipe', id: '#sobre' },
   { nome: 'FAQ', id: '#faq' },
+  { nome: 'Fale Conosco', id: '/fale-conosco' },
 ]
 
-const botao = { nome: 'Fale Conosco', id: '/fale-conosco' }
+const botao = { nome: 'Login', id: '/login-user' }
 
 const estiloBotao = 'rounded-2xl bg-amarelo px-5 py-2 font-bold text-petroleo transition hover:bg-amarelo-claro'
 
@@ -22,14 +25,14 @@ function LinkMenu({ id, className, onClick, children }) {
   }
 }
 
-const Menu = () => {
+const Header = () => {
   const [aberto, setAberto] = useState(false)
 
   return (
     <header className="sticky top-0 z-50 bg-petroleo text-creme-claro shadow-lg shadow-black/20">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5">
         <Link to="/" onClick={() => setAberto(false)} aria-label="AUDI, página inicial">
-          <img src="/images/audi-logo-menu.svg" alt="AUDI" className="h-10 w-auto" />
+          <img src={logo} alt="AUDI" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop */}
@@ -63,4 +66,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default Header

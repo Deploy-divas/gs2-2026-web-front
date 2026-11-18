@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { X, PawPrint, Nfc, Volume2, Mic, Repeat, BellRing, WifiOff, Save, Hand, Tag, Ear, PencilLine, Boxes, ListChecks, RefreshCw, Check, Plus, ArrowRight } from 'lucide-react'
 
+
+// componentes
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
 // imagens
 import Beatriz from '../assets/beatriz.png'
 import Laura from '../assets/laura.png'
@@ -48,6 +53,8 @@ const Index = () => {
 
   return (
     <>
+
+      <Header />
 
       {/* HERO */}
       <section id="topo" className="bg-petroleo text-creme-claro">
@@ -192,6 +199,7 @@ const Index = () => {
         </div>
       </section>
 
+      <Footer />
       
     </>
   )
