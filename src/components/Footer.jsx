@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/audi-logo.svg'
 
 const links = [
-  { nome: 'Problema', id: '#problema' },
-  { nome: 'Como funciona', id: '#como-funciona' },
-  { nome: 'Equipe', id: '#sobre' },
-  { nome: 'FAQ', id: '#faq' },
+  { nome: 'Problema', id: '/#problema' },
+  { nome: 'Como funciona', id: '/#como-funciona' },
+  { nome: 'Equipe', id: '/#sobre' },
+  { nome: 'FAQ', id: '/#faq' },
   { nome: 'Fale Conosco', id: '/fale-conosco' },
 ]
 
