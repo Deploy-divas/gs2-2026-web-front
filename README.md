@@ -49,32 +49,6 @@ Este repositório contém a aplicação web, que tem duas partes:
 - Uma conta no [EmailJS](https://www.emailjs.com/) com um serviço e um template de e-mail criados
 
 
-### Configuração do Supabase
-
-O projeto espera a seguinte estrutura no Supabase:
-
-**Tabela `audios`**
-
-| Coluna         | Descrição                                          |
-| -------------- | -------------------------------------------------- |
-| `id`           | Identificador do áudio                             |
-| `usuario_id`   | ID do usuário dono do áudio (`auth.users`)         |
-| `titulo`       | Título do áudio                                    |
-| `etiqueta_nfc` | Identificador da etiqueta NFC                      |
-| `transcricao`  | Transcrição do áudio                               |
-| `arquivo`      | Caminho do arquivo no Storage                      |
-| `criado_em`    | Data de criação (usada na ordenação)               |
-
-**Tabela `emails`** — recebe as mensagens do formulário de contato, com as colunas `created_at`, `nome`, `email`, `assunto` e `mensagem`.
-
-**Bucket `audios`** (Storage) — privado; os arquivos são salvos em `<usuario_id>/<uuid>.<extensão>`.
-
-Lembre-se de configurar as políticas de acesso (RLS) para que cada usuário só consiga ler e alterar os próprios áudios.
-
-### Configuração do EmailJS
-
-No painel do EmailJS, crie um serviço de e-mail e um template. O template recebe as variáveis `nome`, `email`, `assunto` e `mensagem`. Anote a **Public Key**, o **Service ID** e o **Template ID**.
-
 ## Instalação
 
 1. Clone o repositório:
@@ -90,7 +64,39 @@ No painel do EmailJS, crie um serviço de e-mail e um template. O template receb
    npm install
    ```
 
+
 3. Crie um arquivo `.env` na raiz do projeto com as variáveis de ambiente:
+
+   *OBS:*  O arquivo `.env` está dísponivel no repositório para facilitar o acesso para os professores, então essa etapa é dispensável, o sistema está funcionando perfeitamente. Caso deseje visualizar o banco de dados completo, prossiga com as etapas abaixo. 
+
+   ### Configuração do Supabase
+
+   O projeto espera a seguinte estrutura no Supabase:
+
+   **Tabela `audios`**
+
+   | Coluna         | Descrição                                          |
+   | -------------- | -------------------------------------------------- |
+   | `id`           | Identificador do áudio                             |
+   | `usuario_id`   | ID do usuário dono do áudio (`auth.users`)         |
+   | `titulo`       | Título do áudio                                    |
+   | `etiqueta_nfc` | Identificador da etiqueta NFC                      |
+   | `transcricao`  | Transcrição do áudio                               |
+   | `arquivo`      | Caminho do arquivo no Storage                      |
+   | `criado_em`    | Data de criação (usada na ordenação)               |
+
+   **Tabela `emails`** — recebe as mensagens do formulário de contato, com as colunas `created_at`, `nome`, `email`, `assunto` e `mensagem`.
+
+   **Bucket `audios`** (Storage) — privado; os arquivos são salvos em `<usuario_id>/<uuid>.<extensão>`.
+
+   Lembre-se de configurar as políticas de acesso (RLS) para que cada usuário só consiga ler e alterar os próprios áudios.
+
+   ### Configuração do EmailJS
+
+   No painel do EmailJS, crie um serviço de e-mail e um template. O template recebe as variáveis `nome`, `email`, `assunto` e `mensagem`. Anote a **Public Key**, o **Service ID** e o **Template ID**.
+
+
+   ### Ao finalizar as configurações das apis, edite o arquivo `.env` inserindo suas próprias credenciais. 
 
    ```env
    VITE_SUPABASE_URL=https://seu-projeto.supabase.co
@@ -111,7 +117,6 @@ No painel do EmailJS, crie um serviço de e-mail e um template. O template receb
    | `VITE_EMAILJS_SERVICE_ID`   | EmailJS → Email Services                                |
    | `VITE_EMAILJS_TEMPLATE_ID`  | EmailJS → Email Templates                               |
 
-   > ⚠️ **Atenção:** o `.env` contém credenciais. Adicione `.env` ao `.gitignore` e não o envie para o repositório.
 
 ## Execução
 
@@ -136,4 +141,4 @@ A aplicação ficará disponível em **http://localhost:5173** (o endereço exat
 
 ### Repositorio Github: **https://github.com/Deploy-divas/gs2-2026-web-front**
 
-### Deploy na Vercel: **https://gs2-2026.vercel.app/**
+### Deploy na Vercel: **https://gs-2026.vercel.app/**
