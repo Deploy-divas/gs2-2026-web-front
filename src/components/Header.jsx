@@ -6,7 +6,7 @@ import { Menu as IconeMenu, X } from 'lucide-react'
 import logo from '../assets/audi-logo.svg'
 
 const links = [
-  { nome: 'Home', id: '/' },
+  { nome: 'Inicio', id: '/' },
   { nome: 'Fale Conosco', id: '/fale-conosco' },
 ]
 

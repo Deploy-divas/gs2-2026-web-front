@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Inputs from "../components/Inputs";
+import Input from "../components/Inputs";
 import { useAuth } from "../contexts/AuthContext";
 
 const Cadastro = () => {
@@ -53,12 +53,6 @@ const Cadastro = () => {
             formulario.nome
         );
 
-        navigate("/login", {
-            state: {
-            mensagem: "Cadastro realizado! Faça login para continuar.",
-            },
-        });
-
         } catch (error) {
         setErro(error.message);
         } finally {
@@ -75,22 +69,22 @@ const Cadastro = () => {
         <section className="w-full max-w-md rounded-3xl border border-borda bg-creme-claro p-8 shadow-lg">
 
             <h1 className="text-center font-titulo text-3xl font-extrabold">
-            Crie sua conta
+                Crie sua conta
             </h1>
 
             <p className="mb-8 mt-2 text-center text-cinza">
-            Comece a utilizar o AUDI.
+                Comece a utilizar o AUDI.
             </p>
 
             <form onSubmit={aoCadastrar}>
-            <Inputs
+            <Input
                 label="Nome"
                 name="nome"
                 value={formulario.nome}
                 onChange={aoAlterar}
             />
 
-            <Inputs
+            <Input
                 label="E-mail"
                 name="email"
                 type="email"
@@ -98,7 +92,7 @@ const Cadastro = () => {
                 onChange={aoAlterar}
             />
 
-            <Inputs
+            <Input
                 label="Senha"
                 name="senha"
                 type="password"
@@ -106,7 +100,7 @@ const Cadastro = () => {
                 onChange={aoAlterar}
             />
 
-            <Inputs
+            <Input
                 label="Confirmar senha"
                 name="confirmarSenha"
                 type="password"
