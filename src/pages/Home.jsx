@@ -105,7 +105,7 @@ const Home = () => {
                 onClick={sairDaConta}
                 className="rounded-xl border-2 border-borda px-5 py-3 font-semibold text-petroleo"
               >
-                Sair
+                Logout
               </button>
             </div>
           </div>

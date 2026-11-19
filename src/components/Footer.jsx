@@ -7,8 +7,8 @@ const links = [
   { nome: 'Inicio', id: '/' },
   { nome: 'Fale Conosco', id: '/fale-conosco' },
   { nome: 'Login', id: '/login' },
-  { nome: 'Cadastro', id: '/Cadastro' },
-  { nome: 'Home', id: '/Home' },
+  { nome: 'Cadastro', id: '/cadastro' },
+  { nome: 'Home', id: '/home' },
 ]
 
 const Footer = () => {

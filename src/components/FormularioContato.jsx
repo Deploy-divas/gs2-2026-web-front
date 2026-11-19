@@ -1,27 +1,21 @@
 
 import { useState } from "react";
 import { enviarMensagem } from "../services/envioEmails";
+import useFormulario from "../hooks/useFormulario";
 
 import Input from "./Inputs";
 
 function FormularioContato() {
 
-  const [formulario, setFormulario] = useState({
+  const { valores: formulario, aoAlterar, limpar } = useFormulario({
     nome: "",
     email: "",
     assunto: "",
-    mensagem: ""
+    mensagem: "",
   });
 
   const [enviando, setEnviando] = useState(false);
   const [status, setStatus] = useState("");
-
-  function aoAlterar(event) {
-    setFormulario({
-      ...formulario,
-      [event.target.name]: event.target.value
-    });
-  }
 
   async function aoEnviar(event) {
     event.preventDefault();
@@ -38,12 +32,7 @@ function FormularioContato() {
         return;
     }
 
-    setFormulario({
-      nome: "",
-      email: "",
-      assunto: "",
-      mensagem: ""
-    });
+    limpar();
 
     if (resultado.enviou) {
       setStatus("Mensagem enviada com sucesso!");

@@ -8,22 +8,15 @@ const FormularioAudio = ({
   aoCancelar,
   salvando
 }) => {
-  const [formulario, setFormulario] = useState({
+
+
+  const { valores: formulario, aoAlterar } = useFormulario({
     titulo: audio?.titulo || "",
     etiqueta_nfc: audio?.etiqueta_nfc || "",
     transcricao: audio?.transcricao || "",
   });
 
   const [arquivo, setArquivo] = useState(null);
-
-  const aoAlterar = (e) => {
-    const { name, value } = e.target;
-
-    setFormulario({
-      ...formulario,
-      [name]: value,
-    });
-  };
 
   const aoEnviar = (e) => {
     e.preventDefault();
