@@ -131,7 +131,7 @@ A aplicação ficará disponível em **http://localhost:5173** (o endereço exat
 
 ## Vercel
 
-Acesse o projeto em **https://gs-2026.vercel.app/** e explore todas as nossas funcionalidades.
+Acesse o projeto em **https://gs-2026-sepia.vercel.app/** e explore todas as nossas funcionalidades.
 Você pode criar seu próprio cadastro e fazer login com sua nova conta, ou, se preferir, utilize nosso user teste que já possui audios cadastrados.
 
 E-mail : **user@email**
@@ -150,4 +150,4 @@ Senha : **123123**
 
 ### Repositorio Github: **https://github.com/Deploy-divas/gs2-2026-web-front**
 
-### Deploy na Vercel: **https://gs-2026.vercel.app/**
+### Deploy na Vercel: **https://gs-2026-sepia.vercel.app/**
