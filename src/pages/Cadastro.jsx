@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Input from "../components/Inputs";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../hooks/AuthContext";
 
 const Cadastro = () => {
 
@@ -52,6 +52,8 @@ const Cadastro = () => {
             formulario.senha,
             formulario.nome
         );
+
+        navigate("/login");
 
         } catch (error) {
         setErro(error.message);
