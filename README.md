@@ -130,3 +130,10 @@ A aplicação ficará disponível em **http://localhost:5173** (o endereço exat
 | Beatriz Mantovani da Cruz    | 273824 |
 | Amanda Silva da Mata         | 578525 |
 | Laura Sampaio Neves          | 570802 |
+
+
+## LINKS
+
+### Repositorio Github: **https://github.com/Deploy-divas/gs2-2026-web-front**
+
+### Deploy na Vercel: **https://gs2-2026.vercel.app/**
