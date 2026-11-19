@@ -5,6 +5,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Input from "../components/Inputs";
 import { useAuth } from "../hooks/AuthContext";
+import useFormulario from "../hooks/useFormulario";
+
 
 const Login = () => {
 
@@ -12,22 +14,13 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const [formulario, setFormulario] = useState({
-        email: "",
-        senha: "",
-    });
-
     const [erro, setErro] = useState("");
     const [carregando, setCarregando] = useState(false);
 
-    function aoAlterar(evento) {
-        const { name, value } = evento.target;
-
-        setFormulario({
-        ...formulario,
-        [name]: value,
-        });
-    }
+    const { valores: formulario, aoAlterar } = useFormulario({
+    email: "",
+    senha: "",
+    });
 
     async function aoEntrar(evento) {
         evento.preventDefault();

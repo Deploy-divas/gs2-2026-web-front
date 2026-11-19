@@ -5,30 +5,22 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Input from "../components/Inputs";
 import { useAuth } from "../hooks/AuthContext";
+import useFormulario from "../hooks/useFormulario";
 
 const Cadastro = () => {
 
     const { cadastrarUsuario } = useAuth();
     const navigate = useNavigate();
 
-    const [formulario, setFormulario] = useState({
+    const [erro, setErro] = useState("");
+    const [carregando, setCarregando] = useState(false);
+
+    const { valores: formulario, aoAlterar } = useFormulario({
         nome: "",
         email: "",
         senha: "",
         confirmarSenha: "",
     });
-
-    const [erro, setErro] = useState("");
-    const [carregando, setCarregando] = useState(false);
-
-    function aoAlterar(evento) {
-        const { name, value } = evento.target;
-
-        setFormulario({
-        ...formulario,
-        [name]: value,
-        });
-    }
 
     async function aoCadastrar(evento) {
         evento.preventDefault();
