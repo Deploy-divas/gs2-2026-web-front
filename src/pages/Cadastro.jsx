@@ -53,6 +53,8 @@ const Cadastro = () => {
             formulario.nome
         );
 
+        navigate("/login");
+
         } catch (error) {
         setErro(error.message);
         } finally {

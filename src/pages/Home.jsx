@@ -3,7 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ListaAudios from "../components/ListaAudios";
 import FormularioAudio from "../components/FormularioAudio";
-import { useAudios } from "../hooks/useAudios";
+
+import useAudios from "../hooks/useAudios";
 import { useAuth } from "../hooks/AuthContext";
 
 const Home = () => {
