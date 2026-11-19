@@ -6,6 +6,9 @@ import logo from '../assets/audi-logo.svg'
 const links = [
   { nome: 'Inicio', id: '/' },
   { nome: 'Fale Conosco', id: '/fale-conosco' },
+  { nome: 'Login', id: '/login' },
+  { nome: 'Cadastro', id: '/Cadastro' },
+  { nome: 'Home', id: '/Home' },
 ]
 
 const Footer = () => {
